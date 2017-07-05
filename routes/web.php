@@ -15,13 +15,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin', function () {
-	return view('admin.home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+ * Admin Route
+ */
+Route::get('admin', 'Admin\AdminController@index');
+
+//User Route
+Route::get('admin/user', 'Admin\UserController@index');
+Route::get('admin/user/create', 'Admin\UserController@create');
+Route::get('admin/user/edit', 'Admin\UserController@edit');
+Route::get('admin/user/delete', 'Admin\UserController@delete');
+
+/*
+ * Admin Menu
+ */
+Menu::make('admin_menu', function($menu){
+  
+	$menu->add('View site')->attr(array('it-icon' => 'home'));
+	$menu->add('Dashboard', 'admin')->attr(array('it-icon' => 'dashboard'))->link->active();
+
+	//User
+	$menu->add('User Manager', '#')->attr(array('it-icon' => 'user-md'));
+	$menu->userManager->add('Users',    'admin/user')->attr(array('it-icon' => 'user'))->active('admin/user/*');
+	$menu->userManager->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
+	$menu->userManager->add('Roles', 'admin/role')->attr(array('it-icon' => 'user-times'))->active('admin/role/*');
+  
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
