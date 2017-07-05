@@ -13,20 +13,12 @@
 </li>
 @endsection
 
+@section('body_class', 'admin-user-page')
+
 @section('content')
 
-<div id="admin-homepage">
-	<div class="wrapper wrapper-content">
-	    <div class="row">
-	        <div class="col-lg-12">
-	            <div class="ibox">
-	                <div class="ibox-content">
-	                	
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+<div class="ibox-content">
+	
 </div>
 
 @endsection

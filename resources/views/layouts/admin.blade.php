@@ -218,8 +218,16 @@
                     A wonderful serenity has taken possession. <a class="alert-link" href="#">Alert Link</a>.
                 </div>
             </div>
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox">
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            @yield('content')
 
             <div class="footer">
                 <div class="pull-right">
