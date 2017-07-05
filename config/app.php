@@ -177,7 +177,15 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Admin Menu
+         */
         'Lavary\Menu\ServiceProvider',
+
+        /*
+         * Role-based Permissons
+         */
+        Zizaco\Entrust\EntrustServiceProvider::class,
 
     ],
 
@@ -228,7 +236,15 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Admin Menu
+         */
         'Menu'       => 'Lavary\Menu\Facade',
+
+        /*
+         * Role-based Permissons
+         */
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 

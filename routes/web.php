@@ -34,6 +34,18 @@ Route::get('admin/user/create', 'Admin\UserController@create');
 Route::get('admin/user/edit', 'Admin\UserController@edit');
 Route::get('admin/user/delete', 'Admin\UserController@delete');
 
+//Role Route
+Route::get('admin/role','Admin\RoleController@index');
+Route::get('admin/role/create','Admin\RoleController@create');
+Route::get('admin/role/edit','Admin\RoleController@edit');
+Route::get('admin/role/delete','Admin\RoleController@delete');
+
+//Permission Route
+Route::get('admin/permission','Admin\PermissionController@index');
+Route::get('admin/permission/create','Admin\PermissionController@create');
+Route::get('admin/permission/edit','Admin\PermissionController@edit');
+Route::get('admin/permission/delete','Admin\PermissionController@delete');
+
 /*
  * Admin Menu
  */
