@@ -100,16 +100,29 @@
                 <div class="col-lg-2">
                 </div>
             </div>
-            <div class="notifications">
-                <!-- <div class="alert alert-info alert-dismissable animated fadeInDown" style="margin-top: 20px; padding: 0 10px">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    A wonderful serenity has taken possession. <a class="alert-link" href="#">Alert Link</a>.
-                </div>
-                <div class="alert alert-danger alert-dismissable animated fadeInDown" style="margin-top: 20px; padding: 0 10px">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    A wonderful serenity has taken possession. <a class="alert-link" href="#">Alert Link</a>.
-                </div> -->
+            <div class="notifications" style="padding: 0 10px">
+                @if (Session::has('success'))
+                    <div class="alert alert-info alert-dismissable animated fadeInDown" style="margin-top: 20px;">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        {{ Session::get('success') }}
+                    </div>
+                @elseif (Session::has('error'))
+                    <div class="alert alert-danger alert-dismissable animated fadeInDown" style="margin-top: 20px;">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        {{ Session::get('error') }}
+                    </div>
+                @elseif (count($errors) > 0)
+                    <div class="alert alert-danger  alert-dismissable animated fadeInDown" style="margin-top: 20px;">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
+            
             <div class="wrapper wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
