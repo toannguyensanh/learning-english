@@ -187,6 +187,11 @@ return [
          */
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+        /*
+         * Package Form
+         */
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -245,6 +250,12 @@ return [
          * Role-based Permissons
          */
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+        /*
+         * Package Form
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
