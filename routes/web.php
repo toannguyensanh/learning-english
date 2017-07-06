@@ -37,14 +37,16 @@ Route::get('admin/user/delete', 'Admin\UserController@delete');
 //Role Route
 Route::get('admin/role','Admin\RoleController@index');
 Route::get('admin/role/create','Admin\RoleController@create');
-Route::get('admin/role/edit','Admin\RoleController@edit');
-Route::get('admin/role/delete','Admin\RoleController@delete');
+Route::get('admin/role/edit/{id}','Admin\RoleController@edit');
+Route::post('admin/role/update','Admin\RoleController@update');
+Route::get('admin/role/delete/{id}','Admin\RoleController@delete');
 
 //Permission Route
 Route::get('admin/permission','Admin\PermissionController@index');
 Route::get('admin/permission/create','Admin\PermissionController@create');
-Route::get('admin/permission/edit','Admin\PermissionController@edit');
-Route::get('admin/permission/delete','Admin\PermissionController@delete');
+Route::get('admin/permission/edit/{id}','Admin\PermissionController@edit');
+Route::post('admin/permission/update','Admin\PermissionController@update');
+Route::get('admin/permission/delete/{id}','Admin\PermissionController@delete');
 
 /*
  * Admin Menu
@@ -57,7 +59,7 @@ Menu::make('admin_menu', function($menu){
 	//User
 	$menu->add('User Manager', '#')->attr(array('it-icon' => 'user-md'));
 	$menu->userManager->add('Users',    'admin/user')->attr(array('it-icon' => 'user'))->active('admin/user/*');
-	$menu->userManager->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
 	$menu->userManager->add('Roles', 'admin/role')->attr(array('it-icon' => 'user-times'))->active('admin/role/*');
+	$menu->userManager->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
   
 });
