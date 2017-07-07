@@ -62,6 +62,9 @@ class PermissionController extends Controller
     public function delete($id) {
     	$permission = Permission::find($id);
     	$permission->delete();
+        
+        $permission->roles()->sync([]);
+
     	Session::flash('success', 'Delete successfully!');
 
     	return redirect('admin/permission');

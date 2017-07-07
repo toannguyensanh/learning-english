@@ -49,7 +49,7 @@
 	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Display Name</label>
 	        <div class="col-sm-10">
-	            <input type="text" name="display_name" value="{{ $permission ? $permission->display_name : '' }}" class="form-control">
+	            <input type="text" name="display_name" value="{{ $permission ? $permission->display_name : '' }}" class="form-control" required>
 	        </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
