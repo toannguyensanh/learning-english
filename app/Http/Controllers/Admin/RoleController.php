@@ -46,10 +46,11 @@ class RoleController extends Controller
                 'name' => $arr_req['name'], 
                 'display_name' => $arr_req['display_name'], 
             ]);
-  
-            foreach ($arr_req['permissions'] as $value) {
-                $permission = Permission::where('name', $value)->first();
-                $role->attachPermission($permission);
+            if(!empty($arr_req['permissions'])) {
+                foreach ($arr_req['permissions'] as $value) {
+                    $permission = Permission::where('name', $value)->first();
+                    $role->perms()->attach($permission);
+                }
             }
  
     		$role->description = $arr_req['description'];
@@ -61,12 +62,18 @@ class RoleController extends Controller
     	}
     	else {
     		$role = Role::findOrFail($request->input('id'));
+            
+            $role->name = $request->get('name');
+            $role->display_name = $request->get('display_name');
+            $role->description = $request->get('description');
 
     		$role->detachPermissions($role->permission);
 
-            foreach ($request->get('permissions') as $value) {
-                $permission = Permission::where('name', $value)->first();
-                $role->attachPermission($permission);
+            if(!empty($request->get('permissions'))) { 
+                foreach ($request->get('permissions') as $value) {
+                    $permission = Permission::where('name', $value)->first();
+                    $role->perms()->attach($permission);
+                }
             }
 
             $role->save();
