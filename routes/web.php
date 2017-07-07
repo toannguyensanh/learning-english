@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -31,8 +28,9 @@ Route::get('admin', 'Admin\AdminController@index');
 //User Route
 Route::get('admin/user', 'Admin\UserController@index');
 Route::get('admin/user/create', 'Admin\UserController@create');
-Route::get('admin/user/edit', 'Admin\UserController@edit');
-Route::get('admin/user/delete', 'Admin\UserController@delete');
+Route::get('admin/user/edit/{id}', 'Admin\UserController@edit');
+Route::post('admin/user/update', 'Admin\UserController@update');
+Route::get('admin/user/delete/{id}', 'Admin\UserController@delete');
 
 //Role Route
 Route::get('admin/role','Admin\RoleController@index');

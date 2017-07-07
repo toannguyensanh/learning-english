@@ -38,11 +38,13 @@
 					<td>{{$user->name}}</td>
 					<td>{{$user->email}}</td>
 					<td>
-						<img src="{{asset('/uploads/' . $user->avatar)}}">
+						@if ($user->avatar)
+							<img src="{{$user->avatar}}" width="50px">
+						@endif
 					</td>
 					<td>
-						<a href="/admin/user/edit" class="btn btn-success">Edit</a>
-						<a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+						<a href="/admin/user/edit/{{$user->id}}" class="btn btn-success">Edit</a>
+						<a href="/admin/user/delete/{{$user->id}}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			@endforeach
