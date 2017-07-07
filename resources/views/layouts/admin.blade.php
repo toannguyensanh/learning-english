@@ -29,7 +29,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="{{URL::asset('assets/images/profile_small.jpg')}}" />
+                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? Auth::user()->avatar : asset('/assets/images/default-profile-img.png') }}" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            <img alt="image" class="img-circle" src="{{URL::asset('assets/images/profile_small.jpg')}}" />
+                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? Auth::user()->avatar : asset('/assets/images/default-profile-img.png') }}" />
                         </div>
                     </li>
 
