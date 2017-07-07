@@ -23,7 +23,7 @@
         "dateFormat": "d M Y H:i",
         "serverRoot": true,
         "fileRoot": "uploads/",
-        "baseUrl": false,
+        "baseUrl": "/uploads/",
         "logger": false,
         "capabilities": ["select", "download", "rename", "delete", "replace"],
         "plugins": []
