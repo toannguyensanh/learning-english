@@ -88,6 +88,19 @@
 	    <div class="hr-line-dashed"></div>
 
 	    <div class="form-group">
+	        <label class="col-sm-2 control-label">Roles</label>
+	        <div class="col-sm-10">
+	        	@foreach ($roles as $role)
+		            <div class="checkbox checkbox-primary">
+	                    <input id="{{$role->name}}"name="roles[]" type="checkbox" {{ $user ? ($user->hasRole($role->name) ? 'checked' : '') : '' }} value="{{$role->name}}">
+	                    <label for="{{$role->name}}">{{$role->display_name}}</label>
+	                </div>
+                @endforeach
+            </div>
+	    </div>
+	    <div class="hr-line-dashed"></div>
+
+	    <div class="form-group">
 	        <div class="col-sm-4 col-sm-offset-2">
 	        	<a href="/admin/user"><button class="btn btn-default dim" type="button">Back</button></a>
 	            <button class="btn btn-primary dim" type="submit">Save changes</button>

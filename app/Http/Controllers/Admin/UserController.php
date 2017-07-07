@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use App\Role;
 
 class UserController extends Controller
 {
@@ -22,12 +23,14 @@ class UserController extends Controller
     }
 
     public function create() {
-    	return view('admin.user.edit');
+    	$roles = Role::all();
+    	return view('admin.user.edit', compact('roles'));
     }
 
     public function edit($id) {
     	$user = User::find($id);
-    	return view('admin.user.edit', compact('user'));
+    	$roles = Role::all();
+    	return view('admin.user.edit', compact('user', 'roles'));
     }
 
     public function update(Request $request) {
@@ -39,10 +42,26 @@ class UserController extends Controller
     		}
 
     		$arr_req = $request->all();
-    		$user = new User();
-    		$user->name = $arr_req['name'];
-    		$user->email = $arr_req['email'];
-    		$user->password = Hash::make($arr_req['password']);
+
+    		if($arr_req['password'] == $arr_req['confirm_password']) {
+    			$password = Hash::make($arr_req['password']);
+    		}   		
+    		else {
+    			Session::flash('error', 'User failed to save successfully!');
+    			return redirect('/admin/user/create');
+    		}
+    		
+    		$user = User::create([
+    			'name' => $arr_req['name'], 
+    			'email' => $arr_req['email'], 
+    			'password' => $password,
+    		]);
+ 
+    		foreach ($arr_req['roles'] as $value) {
+    			$role = Role::where('name', $value)->first();
+				$user->roles()->attach($role);
+    		}
+    		
     		$user->avatar = $arr_req['avatar'];
     		$user->save();
 
@@ -53,7 +72,21 @@ class UserController extends Controller
     	else {
     		$user = User::findOrFail($request->input('id'));
 
-    		$user->update($request->all());
+    		$user->name = $request->get('name');
+    		$user->email = $request->get('email');
+    		$user->avatar = $request->get('avatar');
+    		if($request->get('password') != '' && $request->get('password') == $request->get('confirm_password')) {
+    			$user->password = Hash::make($request->get('password'));
+    		}
+    		$user->detachRoles($user->roles);
+    		foreach ($request->get('roles') as $value) {
+    			if(!$user->hasRole($value)) {
+    				$role = Role::where('name', $value)->first();
+    				$user->attachRole($role);
+    			}
+    		}
+
+    		$user->save();
 
     		Session::flash('success', 'User saved successfully!');
 

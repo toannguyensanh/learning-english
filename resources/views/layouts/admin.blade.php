@@ -12,6 +12,8 @@
     
     <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/css/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
+
     <!-- Toastr style -->
     <link href="{{URL::asset('assets/css/toastr.min.css')}}" rel="stylesheet">
 
