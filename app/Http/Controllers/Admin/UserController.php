@@ -57,10 +57,12 @@ class UserController extends Controller
     			'password' => $password,
     		]);
  
-    		foreach ($arr_req['roles'] as $value) {
-    			$role = Role::where('name', $value)->first();
-				$user->roles()->attach($role);
-    		}
+            if(!empty($arr_req['roles'])) {
+        		foreach ($arr_req['roles'] as $value) {
+        			$role = Role::where('name', $value)->first();
+    				$user->roles()->attach($role);
+        		}
+            }
     		
     		$user->avatar = $arr_req['avatar'];
     		$user->save();
@@ -79,12 +81,15 @@ class UserController extends Controller
     			$user->password = Hash::make($request->get('password'));
     		}
     		$user->detachRoles($user->roles);
-    		foreach ($request->get('roles') as $value) {
-    			if(!$user->hasRole($value)) {
-    				$role = Role::where('name', $value)->first();
-    				$user->attachRole($role);
-    			}
-    		}
+
+            if(!empty($request->get('roles'))) {
+        		foreach ($request->get('roles') as $value) {
+        			if(!$user->hasRole($value)) {
+        				$role = Role::where('name', $value)->first();
+        				$user->attachRole($role);
+        			}
+        		}
+            }
 
     		$user->save();
 
