@@ -72,17 +72,15 @@
 
 	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Avatar</label>
-	        <div class="col-sm-10">
+	        <div class="col-sm-10 wrapper-avatar">
 	        	<div class="input-group">
-	        		<span class="input-group-btn">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button> 
-                    </span>
-		            <input type="text" name="avatar" value="{{ old('avatar') ? old('avatar') : $user ? $user->avatar : '' }}" class="form-control">
+		            <input type="text" name="avatar" value="{{ old('avatar') ? old('avatar') : $user ? $user->avatar : '' }}" class="form-control" id="url_avatar_for_user" readonly>
 		            <span class="input-group-btn">
-		            	<button type="button" class="btn btn-success"><i class="fa fa-upload"></i></button> 
+		            	@php $url = asset('/Filemanager/index.html'); @endphp
+		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_avatar_for_user');"><i class="fa fa-upload"></i></button> 
 		            </span>
 		            <span class="input-group-btn">
-		            	<button type="button" class="btn btn-danger"><i class="fa fa-times"></i></button> 
+		            	<button type="button" class="btn btn-danger" id="delete_url_avatar"><i class="fa fa-times"></i></button> 
 		            </span>
 	            </div>
 	        </div>

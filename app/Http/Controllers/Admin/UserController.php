@@ -42,7 +42,7 @@ class UserController extends Controller
     		$user = new User();
     		$user->name = $arr_req['name'];
     		$user->email = $arr_req['email'];
-    		$user->password = Hash::make($arr_req['description']);
+    		$user->password = Hash::make($arr_req['password']);
     		$user->avatar = $arr_req['avatar'];
     		$user->save();
 
