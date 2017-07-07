@@ -152,6 +152,9 @@
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('assets/js/pace.min.js')}}"></script>
+
+    <script src="{{URL::asset('assets/js/admin.js')}}"></script>
+
     @yield('add-script')
 </body>
 
