@@ -1,16 +1,25 @@
 $(document).ready(function() {
-    $("#delete_url_avatar").click(function() {
-        $("#url_avatar_for_user").val('');
-        $(this).parents(".wrapper-avatar").find('img').remove();
+    $(".delete_url_file_upload").click(function() {
+        $(this).parents('.wrapper-file-upload').find(".url_file_upload").val('');
+        var wrapper = $(this).parents(".wrapper-file-upload");
+        if(wrapper.attr('data-cat') == 'image') {
+            wrapper.find('img').remove();
+        }
     });
 
-    if($("#url_avatar_for_user").val() != '') {
-        $("#url_avatar_for_user").parents(".wrapper-avatar").append("<img src='"+$("#url_avatar_for_user").val()+"' class='m-t'>");
-    }
+    $(".url_file_upload").each(function() {
+        var wrapper = $(this).parents(".wrapper-file-upload");
+        if($(this).val() != '' && wrapper.attr('data-cat') == 'image') {
+            wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+        }
+    });
 
-    $("#url_avatar_for_user").change(function() {
-        $(this).parents(".wrapper-avatar").find('img').remove('img');
-        $(this).parents(".wrapper-avatar").append("<img src='"+$("#url_avatar_for_user").val()+"' class='m-t'>");
+    $("#url_file_upload, #url_file_upload_2").change(function() {
+        var wrapper = $(this).parents(".wrapper-file-upload");
+        if(wrapper.attr('data-cat') == 'image') {
+            wrapper.find('img').remove();
+            wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+        }
     });
 });
 

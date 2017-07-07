@@ -48,6 +48,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
 	Route::get('/permission/edit/{id}','Admin\PermissionController@edit');
 	Route::post('/permission/update','Admin\PermissionController@update');
 	Route::get('/permission/delete/{id}','Admin\PermissionController@delete');
+
+	//Phrases Route
+	Route::get('/phrases','Admin\PhrasesController@index');
+	Route::get('/phrases/create','Admin\PhrasesController@create');
+	Route::get('/phrases/edit/{id}','Admin\PhrasesController@edit');
+	Route::post('/phrases/update','Admin\PhrasesController@update');
+	Route::get('/phrases/delete/{id}','Admin\PhrasesController@delete');
+
 });
 
 /*
@@ -59,9 +67,12 @@ Menu::make('admin_menu', function($menu){
 	$menu->add('Dashboard', 'admin')->attr(array('it-icon' => 'dashboard'))->link->active();
 
 	//User
-	$menu->add('User Manager', '#')->attr(array('it-icon' => 'user-md'));
-	$menu->userManager->add('Users',    'admin/user')->attr(array('it-icon' => 'user'))->active('admin/user/*');
-	$menu->userManager->add('Roles', 'admin/role')->attr(array('it-icon' => 'user-times'))->active('admin/role/*');
-	$menu->userManager->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
+	$menu->add('User Manage', '#')->attr(array('it-icon' => 'user-md'));
+	$menu->userManage->add('Users',    'admin/user')->attr(array('it-icon' => 'user'))->active('admin/user/*');
+	$menu->userManage->add('Roles', 'admin/role')->attr(array('it-icon' => 'user-times'))->active('admin/role/*');
+	$menu->userManage->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
+
+	//Phrases
+	$menu->add('Manage Phrases', 'admin/phrases')->attr(array('it-icon' => 'pencil-square-o'))->active('admin/phrases/*');
   
 });
