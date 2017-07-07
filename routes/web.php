@@ -20,10 +20,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/*
- * Admin Route
- */
-Route::get('admin', 'Admin\AdminController@index');
+Route::group(['middleware' => ['role:admin|owner|employee']], function() {
+	/*
+	 * Admin Route
+	 */
+	Route::get('admin', 'Admin\AdminController@index');
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
 	//User Route
