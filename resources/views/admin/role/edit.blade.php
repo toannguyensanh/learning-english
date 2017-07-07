@@ -67,10 +67,10 @@
 	        <div class="col-sm-10">
 
 	        	@foreach ($permissions as $permission)
+	        		@php $check = ''; @endphp 
 	        		
 		            <div class="checkbox checkbox-primary">
 		            	@if ($role)
-		            		@php $check = ''; @endphp 
 			            	@foreach ($role->perms as $value)
 						        @if ($value->name == $permission->name)
 						        	@php $check = 'checked'; @endphp
