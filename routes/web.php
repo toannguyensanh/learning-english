@@ -25,26 +25,28 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::get('admin', 'Admin\AdminController@index');
 
-//User Route
-Route::get('admin/user', 'Admin\UserController@index');
-Route::get('admin/user/create', 'Admin\UserController@create');
-Route::get('admin/user/edit/{id}', 'Admin\UserController@edit');
-Route::post('admin/user/update', 'Admin\UserController@update');
-Route::get('admin/user/delete/{id}', 'Admin\UserController@delete');
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+	//User Route
+	Route::get('/user', 'Admin\UserController@index');
+	Route::get('/user/create', 'Admin\UserController@create');
+	Route::get('/user/edit/{id}', 'Admin\UserController@edit');
+	Route::post('/user/update', 'Admin\UserController@update');
+	Route::get('/user/delete/{id}', 'Admin\UserController@delete');
 
-//Role Route
-Route::get('admin/role','Admin\RoleController@index');
-Route::get('admin/role/create','Admin\RoleController@create');
-Route::get('admin/role/edit/{id}','Admin\RoleController@edit');
-Route::post('admin/role/update','Admin\RoleController@update');
-Route::get('admin/role/delete/{id}','Admin\RoleController@delete');
+	//Role Route
+	Route::get('/role','Admin\RoleController@index');
+	Route::get('/role/create','Admin\RoleController@create');
+	Route::get('/role/edit/{id}','Admin\RoleController@edit');
+	Route::post('/role/update','Admin\RoleController@update');
+	Route::get('/role/delete/{id}','Admin\RoleController@delete');
 
-//Permission Route
-Route::get('admin/permission','Admin\PermissionController@index');
-Route::get('admin/permission/create','Admin\PermissionController@create');
-Route::get('admin/permission/edit/{id}','Admin\PermissionController@edit');
-Route::post('admin/permission/update','Admin\PermissionController@update');
-Route::get('admin/permission/delete/{id}','Admin\PermissionController@delete');
+	//Permission Route
+	Route::get('/permission','Admin\PermissionController@index');
+	Route::get('/permission/create','Admin\PermissionController@create');
+	Route::get('/permission/edit/{id}','Admin\PermissionController@edit');
+	Route::post('/permission/update','Admin\PermissionController@update');
+	Route::get('/permission/delete/{id}','Admin\PermissionController@delete');
+});
 
 /*
  * Admin Menu
