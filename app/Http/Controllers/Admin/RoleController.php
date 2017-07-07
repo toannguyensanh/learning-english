@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
+use App\Permission;
 use Illuminate\Support\Facades\Session;
 
 class RoleController extends Controller
@@ -21,12 +22,14 @@ class RoleController extends Controller
     }
 
     public function create() {
-    	return view('admin.role.edit');
+        $permissions = Permission::all();
+    	return view('admin.role.edit', compact('permissions'));
     }
 
     public function edit($id) {
     	$role = Role::find($id);
-    	return view('admin.role.edit', compact('role'));
+        $permissions = Permission::all();
+    	return view('admin.role.edit', compact('role', 'permissions'));
     }
 
     public function update(Request $request) {
@@ -38,9 +41,17 @@ class RoleController extends Controller
     		}
 
     		$arr_req = $request->all();
-    		$role = new Role();
-    		$role->name = $arr_req['name'];
-    		$role->display_name = $arr_req['display_name'];
+
+            $role = Role::create([
+                'name' => $arr_req['name'], 
+                'display_name' => $arr_req['display_name'], 
+            ]);
+  
+            foreach ($arr_req['permissions'] as $value) {
+                $permission = Permission::where('name', $value)->first();
+                $role->attachPermission($permission);
+            }
+ 
     		$role->description = $arr_req['description'];
     		$role->save();
 
@@ -51,7 +62,14 @@ class RoleController extends Controller
     	else {
     		$role = Role::findOrFail($request->input('id'));
 
-    		$role->update($request->all());
+    		$role->detachPermissions($role->permission);
+
+            foreach ($request->get('permissions') as $value) {
+                $permission = Permission::where('name', $value)->first();
+                $role->attachPermission($permission);
+            }
+
+            $role->save();
 
     		Session::flash('success', 'Role saved successfully!');
 

@@ -49,7 +49,7 @@
 	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Display Name</label>
 	        <div class="col-sm-10">
-	            <input type="text" name="display_name" value="{{ $role ? $role->display_name : '' }}" class="form-control">
+	            <input type="text" name="display_name" value="{{ $role ? $role->display_name : '' }}" class="form-control" required>
 	        </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
@@ -59,6 +59,29 @@
 	        <div class="col-sm-10">
 	            <input type="text" name="description" value="{{ $role ? $role->description : '' }}" class="form-control">
 	        </div>
+	    </div>
+	    <div class="hr-line-dashed"></div>
+
+	    <div class="form-group">
+	        <label class="col-sm-2 control-label">Permission</label>
+	        <div class="col-sm-10">
+
+	        	@foreach ($permissions as $permission)
+	        		
+		            <div class="checkbox checkbox-primary">
+		            	@if ($role)
+		            		@php $check = ''; @endphp 
+			            	@foreach ($role->perms as $value)
+						        @if ($value->name == $permission->name)
+						        	@php $check = 'checked'; @endphp
+						        @endif
+						    @endforeach
+					    @endif
+	                    <input id="{{$permission->name}}"name="permissions[]" type="checkbox" {{ $check }} value="{{$permission->name}}">
+	                    <label for="{{$permission->name}}">{{$permission->display_name}}</label>
+	                </div>
+                @endforeach
+            </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
 
