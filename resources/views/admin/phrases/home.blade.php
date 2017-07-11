@@ -27,7 +27,7 @@
                 <th>Id</th>
                 <th>English</th>
                 <th>Vietnamese</th>
-                <th>Filter</th>
+                <th>Categories</th>
                 <th>&nbsp;</th>
             </tr>
         </thead>
@@ -38,7 +38,10 @@
 					<td>{{$phrase->english}}</td>
 					<td>{{$phrase->vietnamese}}</td>
 					<td>
-						<p>{{ $phrase->filter }}</p>
+						@php 
+							$cat = $phrase->Categories_phrases;
+						@endphp
+						<p>{{ $cat->name }}</p>
 					</td>
 					<td>
 						<a href="/admin/phrases/edit/{{$phrase->id}}" class="btn btn-success">Edit</a>

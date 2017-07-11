@@ -56,6 +56,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
 	Route::post('/phrases/update','Admin\PhrasesController@update');
 	Route::get('/phrases/delete/{id}','Admin\PhrasesController@delete');
 
+	//Categories phrases Route
+	Route::get('/cat-phrases','Admin\Categories_phrasesController@index');
+	Route::get('/cat-phrases/create','Admin\Categories_phrasesController@create');
+	Route::get('/cat-phrases/edit/{id}','Admin\Categories_phrasesController@edit');
+	Route::post('/cat-phrases/update','Admin\Categories_phrasesController@update');
+	Route::get('/cat-phrases/delete/{id}','Admin\Categories_phrasesController@delete');
+
 });
 
 /*
@@ -73,6 +80,8 @@ Menu::make('admin_menu', function($menu){
 	$menu->userManage->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
 
 	//Phrases
-	$menu->add('Manage Phrases', 'admin/phrases')->attr(array('it-icon' => 'pencil-square-o'))->active('admin/phrases/*');
+	$menu->add('Manage Phrases', '#')->attr(array('it-icon' => 'pencil-square-o'));
+	$menu->managePhrases->add('All Phrases', 'admin/phrases')->attr(array('it-icon' => 'globe'))->active('admin/phrases/*');
+	$menu->managePhrases->add('Categories Phrases', 'admin/cat-phrases')->attr(array('it-icon' => 'list-alt'))->active('admin/cat-phrases/*');
   
 });

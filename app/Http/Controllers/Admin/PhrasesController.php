@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Phrases;
+use App\Models\Categories_phrases;
 use Illuminate\Support\Facades\Session;
 
 class PhrasesController extends Controller
@@ -21,12 +22,14 @@ class PhrasesController extends Controller
     }
 
     public function create() {
-    	return view('admin.phrases.edit');
+        $cat_phrases = Categories_phrases::all();
+    	return view('admin.phrases.edit', compact('cat_phrases'));
     }
 
     public function edit($id) {
     	$phrase = Phrases::find($id);
-    	return view('admin.phrases.edit', compact('phrase'));
+        $cat_phrases = Categories_phrases::all();
+    	return view('admin.phrases.edit', compact('phrase', 'cat_phrases'));
     }
 
     public function update(Request $request) {
