@@ -53,13 +53,13 @@ class Categories_phrasesController extends Controller
     	else {
     		$cat_phrase = Categories_phrases::findOrFail($request->input('id'));
 
-    		$check = Categories_phrases::where('alias', $cat_phrase->alias)->first();
-    		if($check) {
+    		$check = Categories_phrases::where('alias', $request->get('alias'))->first();
+    		if($check && $cat_phrase->alias != $check->alias) {
     			Session::flash('error', 'Categories Phrases failed to save successfully!');
     			return redirect('/admin/cat-phrases/edit/'.$cat_phrase->id);
     		}
             
-            $phrase->update($request->all());
+            $cat_phrase->update($request->all());
 
     		Session::flash('success', 'Categories Phrases saved successfully!');
 
