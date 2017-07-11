@@ -2,6 +2,10 @@
 
 @section('title', 'Admin Page Categories Phrases')
 
+@section('add-style')
+    <link href="{{URL::asset('assets/css/datatables.min.css')}}" rel="stylesheet">
+@endsection
+
 @section('title-page', 'Categories Phrases')
 
 @section('breadcrumb')
@@ -19,9 +23,11 @@
 
 <div class="ibox-content">
 
-	<a href="/admin/cat-phrases/create" class="btn btn-primary btn-lg" style="margin-bottom: 20px;">Add Categories</a>
+	<div class="">
+        <a href="/admin/cat-phrases/create" class="btn btn-primary btn-lg" style="margin-bottom: 20px;">Add Categories</a>
+    </div>
 
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-striped table-bordered table-hover" id="editable">
         <thead>
             <tr>
                 <th>Id</th>
@@ -48,4 +54,14 @@
     </table>
 </div>
 
+@endsection
+
+@section('add-script')
+    <script src="{{URL::asset('assets/js/datatables.min.js')}}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#editable').DataTable();
+        });
+    </script>
 @endsection
