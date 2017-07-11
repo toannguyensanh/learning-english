@@ -20,7 +20,7 @@ class CreatePhrasesTable extends Migration
             $table->string('alias')->unique();
             $table->string('audio_slow')->nullable();
             $table->string('audio_normal')->nullable();
-            $table->integer('cat_phrase_id');
+            $table->integer('cat_phrase_id')->unsigned();
             $table->timestamps();
         });
     }
