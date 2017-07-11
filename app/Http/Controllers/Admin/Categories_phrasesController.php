@@ -70,7 +70,7 @@ class Categories_phrasesController extends Controller
     public function delete($id) {
     	$cat_phrase = Categories_phrases::findOrFail($id);
     	$cat_phrase->delete();
-    	$cat_phrase->Phrases()->sync([]);
+    	// $cat_phrase->Phrases()->sync([]);
 
     	Session::flash('success', 'Delete successfully!');
 

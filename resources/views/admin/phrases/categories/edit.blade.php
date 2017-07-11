@@ -38,44 +38,26 @@
 
 		<input type="hidden" name="id" value="{{ $cat_phrase ? $cat_phrase->id : '' }}">
 
-	    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Name</label>
 	        <div class="col-sm-10">
 	            <input type="text" name="name" class="form-control" value="{{ old('name') ? old('name') : $cat_phrase ? $cat_phrase->name : '' }}" required>
-
-	            @if ($errors->has('name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('name') }}</strong>
-                    </span>
-                @endif
 	        </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
 
-	    <div class="form-group {{ $errors->has('alias') ? ' has-error' : '' }}">
+	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Alias</label>
 	        <div class="col-sm-10">
 	            <input type="text" name="alias" value="{{ old('alias') ? old('alias') : $cat_phrase ? $cat_phrase->alias : '' }}" class="form-control" required>
-
-	            @if ($errors->has('alias'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('alias') }}</strong>
-                    </span>
-                @endif
 	        </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
 
-	    <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
+	    <div class="form-group">
 	        <label class="col-sm-2 control-label">Description</label>
 	        <div class="col-sm-10">
 	            <input type="text" name="description" value="{{ old('description') ? old('description') : $cat_phrase ? $cat_phrase->description : '' }}" class="form-control" required>
-
-	            @if ($errors->has('description'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('description') }}</strong>
-                    </span>
-                @endif
 	        </div>
 	    </div>
 	    <div class="hr-line-dashed"></div>
