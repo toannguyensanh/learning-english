@@ -5,12 +5,18 @@ $(document).ready(function() {
         if(wrapper.attr('data-cat') == 'image') {
             wrapper.find('img').remove();
         }
+        else if(wrapper.attr('data-cat') == 'audio') {
+            wrapper.find('audio').remove();
+        }
     });
 
     $(".url_file_upload").each(function() {
         var wrapper = $(this).parents(".wrapper-file-upload");
         if($(this).val() != '' && wrapper.attr('data-cat') == 'image') {
             wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+        }
+        else if($(this).val() != '' && wrapper.attr('data-cat') == 'audio') {
+            wrapper.append("<audio controls class='m-t'><source src='"+$(this).val()+"' type='audio/mpeg'></audio>");
         }
     });
 
@@ -19,6 +25,10 @@ $(document).ready(function() {
         if(wrapper.attr('data-cat') == 'image') {
             wrapper.find('img').remove();
             wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+        }
+        else if(wrapper.attr('data-cat') == 'audio') {
+            wrapper.find('audio').remove();
+            wrapper.append("<audio controls class='m-t'><source src='"+$(this).val()+"' type='audio/mpeg'></audio>");
         }
     });
 });
