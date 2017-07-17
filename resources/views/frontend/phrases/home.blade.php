@@ -21,7 +21,7 @@
     <div class="col-md-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h1 class="text-center">1000 Cụm từ thông dụng</h1>
+                <h1 class="text-center">1000 Most Common English Phrases</h1>
             </div>
             <div class="ibox-content">
                 <form method="GET" action="/phrases">
@@ -51,10 +51,10 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tiếng Anh</th>
-                                <th>Tiếng Việt</th>
-                                <th>Âm thanh</th>
-                                <th>Chọn</th>
+                                <th>English</th>
+                                <th>Vietnamese</th>
+                                <th>Audio</th>
+                                <th>Select</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,7 +88,7 @@
                     </table>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <button class="btn btn-primary dim" type="submit">Thêm vào kho</button>
+                            <button class="btn btn-primary dim" type="submit">Add To Store</button>
                         </div>
                     </div>
                 </form>
@@ -97,7 +97,12 @@
     </div>
     <div class="col-md-3">
         <div class="ibox-content">
-            sidebar
+            <ul class="folder-list" style="padding: 0">
+                <li><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
+                <li><a href="/phrases/store"><i class="fa fa-hand-o-right"></i> Phrases Store</a></li>
+                <li><a href="#"><i class="fa fa-hand-o-right"></i> All words</a></li>
+                <li><a href="#"><i class="fa fa-hand-o-right"></i> Words store</a></li>
+            </ul>
         </div>
     </div>
 </div>

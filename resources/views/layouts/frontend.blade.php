@@ -29,8 +29,8 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
-                            <li><a aria-expanded="false" href="/phrases">1000 Cụm từ thông dụng</a></li>
-                            <li><a aria-expanded="false" href="/word">1500 Từ thông dụng</a></li>
+                            <li><a aria-expanded="false" href="/phrases">1000 Most Common English Phrases</a></li>
+                            <li><a aria-expanded="false" href="/word">1500 Most Common English Words</a></li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

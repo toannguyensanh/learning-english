@@ -99,6 +99,8 @@ class PhrasesController extends Controller
     	$phrase = Phrases::findOrFail($id);
     	$phrase->delete();
 
+        $phrase->users()->sync([]);
+
     	Session::flash('success', 'Delete successfully!');
 
     	return redirect('admin/phrases');
