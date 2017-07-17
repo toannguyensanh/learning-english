@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Learning English | @yield('title')</title>
+    <title>LE Admin | @yield('title')</title>
     
     <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -34,7 +34,7 @@
                             <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? Auth::user()->avatar : asset('/assets/images/default-profile-img.png') }}" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{Auth::user()->name}}</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -137,11 +137,8 @@
             
 
             <div class="footer">
-                <div class="pull-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <div class="text-center">
+                    <strong>Copyright</strong> Example Company &copy; 2017-2018
                 </div>
             </div>
         </div>
