@@ -37,4 +37,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role', 'role_user');
     }
+
+    public function phrases() {
+        return $this->belongsToMany('App\Models\Phrases', 'user_phrase', 'user_id', 'phrase_id');
+    }
 }

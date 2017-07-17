@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\FrontendController@index');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['role:admin|owner|employee']], function() {
-	/*
-	 * Admin Route
-	 */
+/*
+ * Admin Route
+ */
+Route::group(['middleware' => ['role:admin']], function() {
+	
 	Route::get('admin', 'Admin\AdminController@index');
 });
 
@@ -85,3 +84,9 @@ Menu::make('admin_menu', function($menu){
 	$menu->managePhrases->add('Categories Phrases', 'admin/cat-phrases')->attr(array('it-icon' => 'list-alt'))->active('admin/cat-phrases/*');
   
 });
+
+/*
+ * Frontend Route
+ */
+Route::get('phrases', 'Frontend\PhrasesController@index');
+Route::post('phrases/add', 'Frontend\PhrasesController@add');
