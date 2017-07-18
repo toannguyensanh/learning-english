@@ -90,3 +90,4 @@ Menu::make('admin_menu', function($menu){
  */
 Route::get('phrases', 'Frontend\PhrasesController@index');
 Route::post('phrases/add', 'Frontend\PhrasesController@add');
+Route::get('phrases/store', 'Frontend\PhrasesController@store');

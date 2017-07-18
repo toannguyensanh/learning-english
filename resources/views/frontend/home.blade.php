@@ -16,7 +16,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>STT</th>
+                            <th>#</th>
                             <th>English</th>
                             <th>Vietnamese</th>
                             <th>Audio</th>

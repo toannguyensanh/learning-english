@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title','Phrase Page')
+@section('title','Phrase Store Page')
 
 @section('add-style')
     
@@ -13,7 +13,7 @@
     </style>
 @endsection
 
-@section('body_class', 'phrase-page')
+@section('body_class', 'phrase-store-page')
 
 @section('content')
 
@@ -21,7 +21,7 @@
     <div class="col-md-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h1 class="text-center">1000 Most Common English Phrases</h1>
+                <h1 class="text-center">Phrases Store</h1>
             </div>
             <div class="ibox-content">
                 <form method="GET" action="/phrases">

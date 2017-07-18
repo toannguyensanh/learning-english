@@ -1,0 +1,6 @@
+.sidebar-list li a:hover {
+	font-weight: bold;
+}
+.sidebar-list li.active a {
+	font-weight: bold;
+}

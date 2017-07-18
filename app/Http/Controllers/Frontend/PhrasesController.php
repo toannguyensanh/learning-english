@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Phrases;
 use App\Models\Categories_Phrases;
 use App\User;
+use Illuminate\Support\Facades\Session;
 
 class PhrasesController extends Controller
 {
@@ -17,13 +18,20 @@ class PhrasesController extends Controller
 
     public function index(Request $request) 
     {
+    	$user = \Auth::user();
+    	$user_phrases = $user->phrases;
+    	$arr = [];
+    	foreach ($user_phrases as $val) {
+    		$arr[] = $val->pivot->phrase_id;
+    	}
+
     	$cat_phrases = Categories_phrases::all();
         if($request->input('filter') && $request->input('filter') != 'all') {
             $filter = $request->input('filter');
-            $phrases = Categories_phrases::find($filter)->Phrases;
+            $phrases = Categories_phrases::find($filter)->Phrases()->whereNotIn('id', $arr)->get();
             return view('frontend.phrases.home', compact('phrases', 'filter', 'cat_phrases'));
         }
-    	$phrases = Phrases::all();
+    	$phrases = Phrases::whereNotIn('id',  $arr)->get();
         return view('frontend.phrases.home', compact('phrases', 'cat_phrases'));
     }
 
@@ -35,6 +43,51 @@ class PhrasesController extends Controller
 	    		$phrase = Phrases::where('id', $value)->first();
 	    		$user->phrases()->attach($phrase);
 	    	}
+	    	Session::flash('success', 'Add to store successfully!');
+	    	if($request->get('old_request')) {
+	    		return redirect('/phrases?' . $request->get('old_request'));
+	    	}
+	    	else {
+	    		return redirect('/phrases');
+	    	}	    	
+    	}
+    	else {
+    		if($request->get('old_request')) {
+	    		return redirect('/phrases?' . $request->get('old_request'));
+	    	}
+	    	else {
+	    		return redirect('/phrases');
+	    	}	
+    	}
+    }
+
+    public function store() {
+    	$user = \Auth::user();
+    	$user_phrases = $user->phrases;
+    	$arr = [];
+    	foreach ($user_phrases as $val) {
+    		$arr[] = $val->pivot->phrase_id;
+    	}
+    	
+    	$cat_phrases = Categories_phrases::all();
+        if($request->input('filter') && $request->input('filter') != 'all') {
+            $filter = $request->input('filter');
+            $phrases = Categories_phrases::find($filter)->Phrases()->whereIn('id', $arr)->get();
+            return view('frontend.phrases.home', compact('phrases', 'filter', 'cat_phrases'));
+        }
+    	$phrases = Phrases::whereIn('id',  $arr)->get();
+        return view('frontend.phrases.home', compact('phrases', 'cat_phrases'));
+    }
+
+    public function remove(Request $request) {
+    	if($request->get('phrase_id')) {
+    		$arr_phrase = $request->get('phrase_id');
+    		$user = \Auth::user();
+    		foreach ($arr_phrase as $value) {
+	    		$phrase = Phrases::where('id', $value)->first();
+	    		$user->phrases()->attach($phrase);
+	    	}
+	    	Session::flash('success', 'Add to store successfully!');
 	    	if($request->get('old_request')) {
 	    		return redirect('/phrases?' . $request->get('old_request'));
 	    	}
