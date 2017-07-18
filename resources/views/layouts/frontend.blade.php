@@ -117,7 +117,7 @@
     <script src="{{URL::asset('assets/js/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('assets/js/jquery.slimscroll.min.js')}}"></script>
     <!-- Custom and plugin javascript -->
-    <script src="{{URL::asset('assets/js/inspinia.js')}}"></script>
+    <script src="{{URL::asset('assets/js/script.js')}}"></script>
     <script src="{{URL::asset('assets/js/pace.min.js')}}"></script>
 
     <script src="{{URL::asset('assets/js/frontend.js')}}"></script>
