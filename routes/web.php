@@ -97,4 +97,5 @@ Route::get('phrases/learn/engtoviet', 'Frontend\PhrasesController@engtoviet');
 Route::get('phrases/learn/viettoeng', 'Frontend\PhrasesController@viettoeng');
 
 // Profile
-Route::get('profile', 'Frontend\Frontend\FrontendController@profile');
+Route::get('profile', 'Frontend\FrontendController@profile');
+Route::post('profile/update', 'Frontend\FrontendController@update_profile');

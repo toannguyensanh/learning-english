@@ -97,7 +97,6 @@
     </div>
     <div class="col-md-3">
         <div class="ibox-content">
-            <div class="ibox-content">
             <h3>Phrases</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
                 <li class="active"><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
@@ -117,7 +116,6 @@
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Words store</a></li>
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Learn Words</a></li>
             </ul>
-        </div>
         </div>
     </div>
 </div>
