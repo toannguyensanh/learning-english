@@ -24,7 +24,7 @@
                 <h1 class="text-center">Phrases Store</h1>
             </div>
             <div class="ibox-content">
-                <form method="GET" action="/phrases">
+                <form method="GET" action="/phrases/store">
                     {{ csrf_field() }}
 
                     <div class="form-group">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </form>
-                <form method="POST" action="/phrases/add" class="form-horizontal">
+                <form method="POST" action="/phrases/remove" class="form-horizontal">
                     {{ csrf_field() }}
 
                     <input type="hidden" name='old_request' value="" id="old_request" />
@@ -88,7 +88,7 @@
                     </table>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <button class="btn btn-primary dim" type="submit">Add To Store</button>
+                            <button class="btn btn-primary dim" type="submit">Remove Phrase</button>
                         </div>
                     </div>
                 </form>
@@ -97,10 +97,21 @@
     </div>
     <div class="col-md-3">
         <div class="ibox-content">
+            <h3>Phrases</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
-                <li class="active"><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
-                <li><a href="/phrases/store"><i class="fa fa-hand-o-right"></i> Phrases Store</a></li>
-                <li><a href="/phrases/learn"><i class="fa fa-hand-o-right"></i> Learn Phrases</a></li>
+                <li><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
+                <li class="active"><a href="/phrases/store"><i class="fa fa-hand-o-right"></i> Phrases Store</a></li>
+                <li>
+                    <span><i class="fa fa-hand-o-right"></i> Learn Phrases</span>
+                    <ul>
+                        <li><a href="/phrases/learn/engtoviet"><i class="fa fa-hand-o-right"></i> Englist to Vietnamese</a></li>
+                        <li><a href="/phrases/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hr-line-dashed"></div>
+            <h3>Words</h3>
+            <ul class="folder-list sidebar-list" style="padding: 0">
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> All words</a></li>
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Words store</a></li>
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Learn Words</a></li>

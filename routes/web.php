@@ -88,6 +88,13 @@ Menu::make('admin_menu', function($menu){
 /*
  * Frontend Route
  */
+// Phrases Route
 Route::get('phrases', 'Frontend\PhrasesController@index');
 Route::post('phrases/add', 'Frontend\PhrasesController@add');
 Route::get('phrases/store', 'Frontend\PhrasesController@store');
+Route::post('phrases/remove', 'Frontend\PhrasesController@remove');
+Route::get('phrases/learn/engtoviet', 'Frontend\PhrasesController@engtoviet');
+Route::get('phrases/learn/viettoeng', 'Frontend\PhrasesController@viettoeng');
+
+// Profile
+Route::get('profile', 'Frontend\Frontend\FrontendController@profile');
