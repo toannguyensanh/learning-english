@@ -3,7 +3,7 @@ $(document).ready(function() {
 		$("#button-show-result").removeClass("hidden");
 		$(".input-content").each(function() {
 			var result = $(this).parent().find(".input-result").val();
-			if($(this).val() == result) {
+			if($(this).val().toLowerCase() == result.toLowerCase()) {
 				$(this).parents(".form-group").find(".hide-check-true").removeClass('hidden');
 				console.log("true");
 			}
