@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button class="btn btn-success dim" type="button" id="button-check-result">Check</button>
-                        <button class="btn btn-primary dim" type="button" id="button-show-result">Show Result</button>
+                        <button class="btn btn-primary dim hidden" type="button" id="button-show-result">Show Result</button>
                     </div>
                 </div>
                 
