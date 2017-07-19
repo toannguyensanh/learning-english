@@ -76,7 +76,7 @@
 	        	<div class="input-group">
 		            <input type="text" name="avatar" value="{{ old('avatar') ? old('avatar') : $user ? $user->avatar : '' }}" class="form-control url_file_upload" id="url_file_upload" readonly>
 		            <span class="input-group-btn">
-		            	@php $url = asset('/Filemanager/index.html'); @endphp
+		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload');"><i class="fa fa-upload"></i></button> 
 		            </span>
 		            <span class="input-group-btn">

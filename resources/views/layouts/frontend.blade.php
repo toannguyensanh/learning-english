@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Learning English | @yield('title')</title>
+    <title>HT Learn English | @yield('title')</title>
     <link href="{{URL::asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('public/assets/css/font-awesome.min.css')}}" rel="stylesheet"> 
 
@@ -26,7 +26,7 @@
                         <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
                             <i class="fa fa-reorder"></i>
                         </button>
-                        <a href="/" class="navbar-brand">Learning English</a>
+                        <a href="/" class="navbar-brand">HT Learn English</a>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">

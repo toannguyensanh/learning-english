@@ -72,7 +72,7 @@
 	            <div class="input-group">
 		            <input type="text" name="audio_slow" value="{{ old('audio_slow') ? old('audio_slow') : $phrase ? $phrase->audio_slow : '' }}" class="form-control url_file_upload" id="url_file_upload">
 		            <span class="input-group-btn">
-		            	@php $url = asset('/Filemanager/index.html'); @endphp
+		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload');"><i class="fa fa-upload"></i></button> 
 		            </span>
 		            <span class="input-group-btn">
@@ -89,7 +89,7 @@
 	            <div class="input-group">
 		            <input type="text" name="audio_normal" value="{{ old('audio_normal') ? old('audio_normal') : $phrase ? $phrase->audio_normal : '' }}" class="form-control url_file_upload" id="url_file_upload_2">
 		            <span class="input-group-btn">
-		            	@php $url = asset('/Filemanager/index.html'); @endphp
+		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload_2');"><i class="fa fa-upload"></i></button> 
 		            </span>
 		            <span class="input-group-btn">
