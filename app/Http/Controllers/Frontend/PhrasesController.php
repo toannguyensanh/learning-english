@@ -44,7 +44,7 @@ class PhrasesController extends Controller
 	    		$phrase = Phrases::where('id', $value)->first();
 	    		$user->phrases()->attach($phrase);
 	    	}
-	    	Session::flash('success', 'Add to store successfully!');
+	    	Session::flash('success', 'Add to storgage successfully!');
 	    	if($request->get('old_request')) {
 	    		return redirect('/phrases?' . $request->get('old_request'));
 	    	}
@@ -62,7 +62,7 @@ class PhrasesController extends Controller
     	}
     }
 
-    public function store(Request $request) 
+    public function storgage(Request $request) 
     {
     	$user = \Auth::user();
     	$user_phrases = $user->phrases;
@@ -75,10 +75,10 @@ class PhrasesController extends Controller
         if($request->input('filter') && $request->input('filter') != 'all') {
             $filter = $request->input('filter');
             $phrases = Categories_phrases::find($filter)->Phrases()->whereIn('id', $arr)->get();
-            return view('frontend.phrases.store', compact('phrases', 'filter', 'cat_phrases'));
+            return view('frontend.phrases.storgage', compact('phrases', 'filter', 'cat_phrases'));
         }
     	$phrases = Phrases::whereIn('id',  $arr)->get();
-        return view('frontend.phrases.store', compact('phrases', 'cat_phrases'));
+        return view('frontend.phrases.storgage', compact('phrases', 'cat_phrases'));
     }
 
     public function remove(Request $request) 
@@ -92,18 +92,18 @@ class PhrasesController extends Controller
 	    	}
 	    	Session::flash('success', 'Remove Phrase successfully!');
 	    	if($request->get('old_request')) {
-	    		return redirect('/phrases/store?' . $request->get('old_request'));
+	    		return redirect('/phrases/storgage?' . $request->get('old_request'));
 	    	}
 	    	else {
-	    		return redirect('/phrases/store');
+	    		return redirect('/phrases/storgage');
 	    	}	    	
     	}
     	else {
     		if($request->get('old_request')) {
-	    		return redirect('/phrases/store?' . $request->get('old_request'));
+	    		return redirect('/phrases/storgage?' . $request->get('old_request'));
 	    	}
 	    	else {
-	    		return redirect('/phrases/store');
+	    		return redirect('/phrases/storgage');
 	    	}	
     	}
     }
@@ -111,14 +111,14 @@ class PhrasesController extends Controller
     public function engtoviet() 
     {
     	$user = \Auth::user();
-    	$phrases = $user->phrases;
+    	$phrases = $user->phrases()->inRandomOrder()->get();
     	return view('frontend.phrases.engtoviet', compact('phrases'));
     }
 
     public function viettoeng() 
     {
     	$user = \Auth::user();
-    	$phrases = $user->phrases;
+    	$phrases = $user->phrases()->inRandomOrder()->get();
     	return view('frontend.phrases.viettoeng', compact('phrases'));
     }
 }

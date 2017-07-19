@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title','Phrase Store Page')
+@section('title','Phrase Storgage Page')
 
 @section('add-style')
     
@@ -13,7 +13,7 @@
     </style>
 @endsection
 
-@section('body_class', 'phrase-store-page')
+@section('body_class', 'phrase-storgage-page')
 
 @section('content')
 
@@ -21,10 +21,10 @@
     <div class="col-md-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h1 class="text-center">Phrases Store</h1>
+                <h1 class="text-center">Phrases Storgage</h1>
             </div>
             <div class="ibox-content">
-                <form method="GET" action="/phrases/store">
+                <form method="GET" action="/phrases/storgage">
                     {{ csrf_field() }}
 
                     <div class="form-group">
@@ -100,7 +100,7 @@
             <h3>Phrases</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
                 <li><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
-                <li class="active"><a href="/phrases/store"><i class="fa fa-hand-o-right"></i> Phrases Store</a></li>
+                <li class="active"><a href="/phrases/storgage"><i class="fa fa-hand-o-right"></i> Phrases Storgage</a></li>
                 <li>
                     <span><i class="fa fa-hand-o-right"></i> Learn Phrases</span>
                     <ul>
@@ -113,7 +113,7 @@
             <h3>Words</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> All words</a></li>
-                <li><a href="#"><i class="fa fa-hand-o-right"></i> Words store</a></li>
+                <li><a href="#"><i class="fa fa-hand-o-right"></i> Words storgage</a></li>
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Learn Words</a></li>
             </ul>
         </div>

@@ -88,7 +88,7 @@
                     </table>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <button class="btn btn-primary dim" type="submit">Add To Store</button>
+                            <button class="btn btn-primary dim" type="submit">Add To Storgage</button>
                         </div>
                     </div>
                 </form>
@@ -100,7 +100,7 @@
             <h3>Phrases</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
                 <li class="active"><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
-                <li><a href="/phrases/store"><i class="fa fa-hand-o-right"></i> Phrases Store</a></li>
+                <li><a href="/phrases/storgage"><i class="fa fa-hand-o-right"></i> Phrases Storgage</a></li>
                 <li>
                     <span><i class="fa fa-hand-o-right"></i> Learn Phrases</span>
                     <ul>
@@ -113,7 +113,7 @@
             <h3>Words</h3>
             <ul class="folder-list sidebar-list" style="padding: 0">
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> All words</a></li>
-                <li><a href="#"><i class="fa fa-hand-o-right"></i> Words store</a></li>
+                <li><a href="#"><i class="fa fa-hand-o-right"></i> Words storgage</a></li>
                 <li><a href="#"><i class="fa fa-hand-o-right"></i> Learn Words</a></li>
             </ul>
         </div>

@@ -91,7 +91,7 @@ Menu::make('admin_menu', function($menu){
 // Phrases Route
 Route::get('phrases', 'Frontend\PhrasesController@index');
 Route::post('phrases/add', 'Frontend\PhrasesController@add');
-Route::get('phrases/store', 'Frontend\PhrasesController@store');
+Route::get('phrases/storgage', 'Frontend\PhrasesController@storgage');
 Route::post('phrases/remove', 'Frontend\PhrasesController@remove');
 Route::get('phrases/learn/engtoviet', 'Frontend\PhrasesController@engtoviet');
 Route::get('phrases/learn/viettoeng', 'Frontend\PhrasesController@viettoeng');
