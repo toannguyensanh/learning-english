@@ -4,7 +4,7 @@
 
 @section('add-style')
     
-    <link href="{{URL::asset('assets/css/datatables.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/datatables.min.css')}}" rel="stylesheet">
 
     <style>
         audio {
@@ -66,7 +66,7 @@
                                     <td>{{ $phrase->vietnamese }}</td>
                                     <td>
                                         <audio controls controlsList="nodownload">
-                                            <source src="{{ $phrase->audio_normal }}" type="audio/mpeg">
+                                            <source src="/public/{{ $phrase->audio_normal }}" type="audio/mpeg">
                                         </audio>
                                     </td>
                                     <td>
@@ -124,7 +124,7 @@
 
 @section('add-script')
     <!-- Datatables -->
-    <script src="{{URL::asset('assets/js/datatables.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/datatables.min.js')}}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

@@ -39,7 +39,7 @@
 					<td>{{$user->email}}</td>
 					<td>
 						@if ($user->avatar)
-							<img src="{{$user->avatar}}" width="50px">
+							<img src="/public/{{$user->avatar}}" width="50px">
 						@endif
 					</td>
 					<td>

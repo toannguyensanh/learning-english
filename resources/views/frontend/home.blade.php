@@ -31,7 +31,7 @@
                                 <td>{{ $phrase->vietnamese }}</td>
                                 <td>
                                     <audio controls controlsList="nodownload">
-                                        <source src="{{ $phrase->audio_normal }}" type="audio/mpeg">
+                                        <source src="/public/{{ $phrase->audio_normal }}" type="audio/mpeg">
                                     </audio>
                                 </td>
                             </tr>

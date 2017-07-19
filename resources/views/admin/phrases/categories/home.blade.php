@@ -3,7 +3,7 @@
 @section('title', 'Admin Page Categories Phrases')
 
 @section('add-style')
-    <link href="{{URL::asset('assets/css/datatables.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/datatables.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('title-page', 'Categories Phrases')
@@ -57,7 +57,7 @@
 @endsection
 
 @section('add-script')
-    <script src="{{URL::asset('assets/js/datatables.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/datatables.min.js')}}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

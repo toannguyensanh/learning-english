@@ -13,10 +13,10 @@ $(document).ready(function() {
     $(".url_file_upload").each(function() {
         var wrapper = $(this).parents(".wrapper-file-upload");
         if($(this).val() != '' && wrapper.attr('data-cat') == 'image') {
-            wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+            wrapper.append("<img src='/public"+$(this).val()+"' class='m-t'>");
         }
         else if($(this).val() != '' && wrapper.attr('data-cat') == 'audio') {
-            wrapper.append("<audio controls class='m-t'><source src='"+$(this).val()+"' type='audio/mpeg'></audio>");
+            wrapper.append("<audio controls class='m-t'><source src='/public"+$(this).val()+"' type='audio/mpeg'></audio>");
         }
     });
 
@@ -24,11 +24,11 @@ $(document).ready(function() {
         var wrapper = $(this).parents(".wrapper-file-upload");
         if(wrapper.attr('data-cat') == 'image') {
             wrapper.find('img').remove();
-            wrapper.append("<img src='"+$(this).val()+"' class='m-t'>");
+            wrapper.append("<img src='/public"+$(this).val()+"' class='m-t'>");
         }
         else if(wrapper.attr('data-cat') == 'audio') {
             wrapper.find('audio').remove();
-            wrapper.append("<audio controls class='m-t'><source src='"+$(this).val()+"' type='audio/mpeg'></audio>");
+            wrapper.append("<audio controls class='m-t'><source src='/public"+$(this).val()+"' type='audio/mpeg'></audio>");
         }
     });
 });

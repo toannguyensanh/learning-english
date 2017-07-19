@@ -8,11 +8,11 @@
 
     <title>Learning English | 404 Error</title>
 
-    <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/font-awesome.min.css')}}" rel="stylesheet">
 
-    <link href="{{URL::asset('assets/css/animate.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/animate.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -35,8 +35,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="{{URL::asset('assets/js/jquery-2.1.1.js')}}"></script>
-    <script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 

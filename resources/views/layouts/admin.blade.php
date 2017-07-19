@@ -10,17 +10,17 @@
 
     <title>LE Admin | @yield('title')</title>
     
-    <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/css/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="{{URL::asset('assets/css/toastr.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/toastr.min.css')}}" rel="stylesheet">
 
      @yield('add-style')
 
-    <link href="{{URL::asset('assets/css/animate.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/animate.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('public/assets/css/style.css')}}" rel="stylesheet">
    
 </head>
 
@@ -31,7 +31,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? Auth::user()->avatar : asset('/assets/images/default-profile-img.png') }}" />
+                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? '/public/'.Auth::user()->avatar : asset('/public/assets/images/default-profile-img.png') }}" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{Auth::user()->name}}</strong>
@@ -54,7 +54,7 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? Auth::user()->avatar : asset('/assets/images/default-profile-img.png') }}" />
+                            <img alt="image" style="max-width: 100%" class="img-circle" src="{{ Auth::user()->avatar ? '/public/'.Auth::user()->avatar : asset('/public/assets/images/default-profile-img.png') }}" />
                         </div>
                     </li>
 
@@ -144,15 +144,15 @@
         </div>
     </div>
     <!-- Mainly scripts -->
-    <script src="{{URL::asset('assets/js/jquery-2.1.1.js')}}"></script>
-    <script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('assets/js/jquery.metisMenu.js')}}"></script>
-    <script src="{{URL::asset('assets/js/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/jquery.metisMenu.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/jquery.slimscroll.min.js')}}"></script>
     <!-- Custom and plugin javascript -->
-    <script src="{{URL::asset('assets/js/script.js')}}"></script>
-    <script src="{{URL::asset('assets/js/pace.min.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/script.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/pace.min.js')}}"></script>
 
-    <script src="{{URL::asset('assets/js/admin.js')}}"></script>
+    <script src="{{URL::asset('public/assets/js/admin.js')}}"></script>
 
     @yield('add-script')
 </body>

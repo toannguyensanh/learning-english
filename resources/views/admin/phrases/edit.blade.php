@@ -7,7 +7,7 @@
 @endsection
 
 @section('add-style')
-	<link href="{{URL::asset('assets/css/chosen.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('public/assets/css/chosen.css')}}" rel="stylesheet">
 @endsection
 
 @section('title-page')
@@ -126,7 +126,7 @@
 @endsection
 
 @section('add-script')
-	<script src="{{URL::asset('assets/js/chosen.jquery.js')}}"></script>
+	<script src="{{URL::asset('public/assets/js/chosen.jquery.js')}}"></script>
 
 	<script type="text/javascript">
 		var config = {

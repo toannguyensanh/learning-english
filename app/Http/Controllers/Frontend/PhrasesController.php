@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Phrases;
-use App\Models\Categories_Phrases;
+use App\Models\Categories_phrases;
 use App\User;
 use Illuminate\Support\Facades\Session;
 

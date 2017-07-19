@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-2">
                             <audio controls controlsList="nodownload">
-                                <source src="{{ $phrase->audio_normal }}" type="audio/mpeg">
+                                <source src="/public/{{ $phrase->audio_normal }}" type="audio/mpeg">
                             </audio>
                         </div>
                         <div class="col-sm-2">
