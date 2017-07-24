@@ -14,7 +14,7 @@ class FrontendController extends Controller
     
     public function index()
     {
-        $phrases = Phrases::paginate(15);
+        $phrases = Phrases::orderBy('english', 'asc')->paginate(15);
         return view('frontend.home', compact('phrases'));
     }
 

@@ -28,10 +28,10 @@ class PhrasesController extends Controller
     	$cat_phrases = Categories_phrases::all();
         if($request->input('filter') && $request->input('filter') != 'all') {
             $filter = $request->input('filter');
-            $phrases = Categories_phrases::find($filter)->Phrases()->whereNotIn('id', $arr)->get();
+            $phrases = Categories_phrases::find($filter)->Phrases()->whereNotIn('id', $arr)->orderBy('english', 'asc')->get();
             return view('frontend.phrases.home', compact('phrases', 'filter', 'cat_phrases'));
         }
-    	$phrases = Phrases::whereNotIn('id',  $arr)->get();
+    	$phrases = Phrases::whereNotIn('id',  $arr)->orderBy('english', 'asc')->get();
         return view('frontend.phrases.home', compact('phrases', 'cat_phrases'));
     }
 
@@ -74,10 +74,10 @@ class PhrasesController extends Controller
     	$cat_phrases = Categories_phrases::all();
         if($request->input('filter') && $request->input('filter') != 'all') {
             $filter = $request->input('filter');
-            $phrases = Categories_phrases::find($filter)->Phrases()->whereIn('id', $arr)->get();
+            $phrases = Categories_phrases::find($filter)->Phrases()->whereIn('id', $arr)->orderBy('english', 'asc')->get();
             return view('frontend.phrases.storgage', compact('phrases', 'filter', 'cat_phrases'));
         }
-    	$phrases = Phrases::whereIn('id',  $arr)->get();
+    	$phrases = Phrases::whereIn('id',  $arr)->orderBy('english', 'asc')->get();
         return view('frontend.phrases.storgage', compact('phrases', 'cat_phrases'));
     }
 
