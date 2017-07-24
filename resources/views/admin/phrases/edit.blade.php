@@ -70,7 +70,7 @@
 	        <label class="col-sm-2 control-label">Audio slow</label>
 	        <div class="col-sm-10 wrapper-file-upload" data-cat="audio">
 	            <div class="input-group">
-		            <input type="text" name="audio_slow" value="{{ old('audio_slow') ? old('audio_slow') : $phrase ? $phrase->audio_slow : '' }}" class="form-control url_file_upload" id="url_file_upload">
+		            <input type="text" name="audio_slow" value="{{ old('audio_slow') ? old('audio_slow') : $phrase ? $phrase->audio_slow : '' }}" class="form-control url_file_upload" id="url_file_upload" readonly="">
 		            <span class="input-group-btn">
 		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload');"><i class="fa fa-upload"></i></button> 
@@ -87,7 +87,7 @@
 	        <label class="col-sm-2 control-label">Audio normal</label>
 	        <div class="col-sm-10 wrapper-file-upload" data-cat="audio">
 	            <div class="input-group">
-		            <input type="text" name="audio_normal" value="{{ old('audio_normal') ? old('audio_normal') : $phrase ? $phrase->audio_normal : '' }}" class="form-control url_file_upload" id="url_file_upload_2">
+		            <input type="text" name="audio_normal" value="{{ old('audio_normal') ? old('audio_normal') : $phrase ? $phrase->audio_normal : '' }}" class="form-control url_file_upload" id="url_file_upload_2" readonly="">
 		            <span class="input-group-btn">
 		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload_2');"><i class="fa fa-upload"></i></button> 

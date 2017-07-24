@@ -70,7 +70,7 @@
 	        <label class="col-sm-2 control-label">Audio</label>
 	        <div class="col-sm-10 wrapper-file-upload" data-cat="audio">
 	            <div class="input-group">
-		            <input type="text" name="audio" value="{{ old('audio') ? old('audio') : $word ? $word->audio : '/uploads/Audio/words/normal/.mp3' }}" class="form-control url_file_upload" id="url_file_upload">
+		            <input type="text" name="audio" value="{{ old('audio') ? old('audio') : $word ? $word->audio : '' }}" class="form-control url_file_upload" id="url_file_upload" readonly="">
 		            <span class="input-group-btn">
 		            	@php $url = asset('/public/Filemanager/index.html'); @endphp
 		            	<button type="button" class="btn btn-success" onclick="BrowseServer('{{$url}}', 'url_file_upload');"><i class="fa fa-upload"></i></button> 
