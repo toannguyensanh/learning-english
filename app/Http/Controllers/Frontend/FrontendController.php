@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Phrases;
+use App\Models\Word;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,9 @@ class FrontendController extends Controller
     
     public function index()
     {
-        $phrases = Phrases::orderBy('english', 'asc')->paginate(15);
-        return view('frontend.home', compact('phrases'));
+        $phrases = Phrases::orderBy('english', 'asc')->paginate(10);
+        $words = Word::orderBy('english', 'asc')->paginate(10);
+        return view('frontend.home', compact('phrases', 'words'));
     }
 
     public function profile()
