@@ -46,9 +46,10 @@
                 @endforeach
 
                 <div class="form-group">
-                    <div class="col-sm-4 col-sm-offset-2">
+                    <div class="col-sm-5 col-sm-offset-2">
                         <button class="btn btn-success dim" type="button" id="button-check-result">Check</button>
                         <button class="btn btn-primary dim hidden" type="button" id="button-show-result">Show Result</button>
+                        <label class="m-l" id="show-result-total"></label>
                     </div>
                 </div>
                 

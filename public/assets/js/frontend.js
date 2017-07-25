@@ -1,17 +1,20 @@
 $(document).ready(function() {
 	$("#button-check-result").click(function() {
+		var count_all = 0;
+		var count_true = 0;
 		$("#button-show-result").removeClass("hidden");
 		$(".input-content").each(function() {
+			count_all++;
 			var result = $(this).parent().find(".input-result").val();
 			if($(this).val().toLowerCase() == result.toLowerCase()) {
 				$(this).parents(".form-group").find(".hide-check-true").removeClass('hidden');
-				console.log("true");
+				count_true++;
 			}
 			else {
 				$(this).parents(".form-group").find(".hide-check-false").removeClass('hidden');
-				console.log(false);
 			}
 		});
+		$("#show-result-total").html(count_true+' / '+count_all);
 	});
 
 	$("#button-check-result-word").click(function() {
