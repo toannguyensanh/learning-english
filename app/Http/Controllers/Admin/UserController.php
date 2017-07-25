@@ -105,6 +105,7 @@ class UserController extends Controller
 
     	$user->roles()->sync([]); // Delete relationship data
         $user->phrases()->sync([]);
+        $user->words()->sync([]);
 
     	Session::flash('success', 'Delete successfully!');
 

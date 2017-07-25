@@ -1,16 +1,28 @@
 .sidebar-list li a:hover, .sidebar-list > li.active > a, .sidebar-list > li.active span, .sidebar-list ul > li.active a {
 	font-weight: bold;
 }
+
 .sidebar-list ul li:last-child {
 	border: 0;
 }
+
 .sidebar-list span {
 	padding: 5px 0;
     display: inline-block;
 }
+
 .hide-check-true, .hide-result span {
 	color: blue;
 }
+
 .hide-check-false {
 	color: red;
+}
+
+.ht-sidebar {
+	display: none;
+}
+
+body.show-sidebar .ht-sidebar {
+	display: block;
 }

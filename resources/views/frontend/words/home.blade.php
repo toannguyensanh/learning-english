@@ -13,11 +13,10 @@
     </style>
 @endsection
 
-@section('body_class', 'word-page')
+@section('body_class', 'word-page show-sidebar')
 
 @section('content')
 
-<div class="row">
     <div class="col-md-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -76,38 +75,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="ibox-content">
-            <h3>Phrases</h3>
-            <ul class="folder-list sidebar-list" style="padding: 0">
-                <li><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
-                <li><a href="/phrases/storgage"><i class="fa fa-hand-o-right"></i> Phrases Storgage</a></li>
-                <li>
-                    <span><i class="fa fa-hand-o-right"></i> Learn Phrases</span>
-                    <ul>
-                        <li><a href="/phrases/learn/engtoviet"><i class="fa fa-hand-o-right"></i> Englist to Vietnamese</a></li>
-                        <li><a href="/phrases/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="hr-line-dashed"></div>
-            <h3>Words</h3>
-            <ul class="folder-list sidebar-list" style="padding: 0">
-                <li class="active"><a href="/word"><i class="fa fa-hand-o-right"></i> All words</a></li>
-                <li><a href="/word/storgage"><i class="fa fa-hand-o-right"></i> Words storgage</a></li>
-                <li>
-                    <span><i class="fa fa-hand-o-right"></i> Learn Word</span>
-                    <ul>
-                        <li><a href="/word/learn/engtoviet"><i class="fa fa-hand-o-right"></i> Englist to Vietnamese</a></li>
-                        <li><a href="/word/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 @endsection
+
+@section('all-words', 'active')
 
 @section('add-script')
     <!-- Datatables -->

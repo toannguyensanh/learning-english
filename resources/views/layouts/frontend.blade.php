@@ -101,7 +101,41 @@
 
             <div class="wrapper wrapper-content">
                 <div class="container">
-                    @yield('content')
+                    <div class="row">
+                        @yield('content')
+
+                        @if(Auth::check())
+                            <div class="col-md-3 ht-sidebar">
+                                <div class="ibox-content">
+                                    <h3>Phrases</h3>
+                                    <ul class="folder-list sidebar-list" style="padding: 0">
+                                        <li class="@yield('all-phrases')"><a href="/phrases"><i class="fa fa-hand-o-right"></i> All Phrases</a></li>
+                                        <li class="@yield('phrases-storgage')"><a href="/phrases/storgage"><i class="fa fa-hand-o-right"></i> Phrases Storgage</a></li>
+                                        <li class="@yield('learn-phrases')">
+                                            <span><i class="fa fa-hand-o-right"></i> Learn Phrases</span>
+                                            <ul>
+                                                <li class="@yield('phrases-engtoviet')"><a href="/phrases/learn/engtoviet"><i class="fa fa-hand-o-right"></i> Englist to Vietnamese</a></li>
+                                                <li class="@yield('phrases-viettoeng')"><a href="/phrases/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="hr-line-dashed"></div>
+                                    <h3>Words</h3>
+                                    <ul class="folder-list sidebar-list" style="padding: 0">
+                                        <li class="@yield('all-words')"><a href="/word"><i class="fa fa-hand-o-right"></i> All words</a></li>
+                                        <li class="@yield('words-storgage')"><a href="/word/storgage"><i class="fa fa-hand-o-right"></i> Words storgage</a></li>
+                                        <li class="@yield('learn-words')">
+                                            <span><i class="fa fa-hand-o-right"></i> Learn Word</span>
+                                            <ul>
+                                                <li class="@yield('words-engtoviet')"><a href="/word/learn/engtoviet"><i class="fa fa-hand-o-right"></i> Englist to Vietnamese</a></li>
+                                                <li class="@yield('words-viettoeng')"><a href="/word/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        @endif
+                    </div>                    
                 </div>
             </div>
             <div class="footer">
