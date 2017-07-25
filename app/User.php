@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function phrases() {
         return $this->belongsToMany('App\Models\Phrases', 'user_phrase', 'user_id', 'phrase_id');
     }
+
+    public function words() {
+        return $this->belongsToMany('App\Models\Word', 'user_word', 'user_id', 'word_id');
+    }
 }

@@ -106,6 +106,14 @@ Route::post('phrases/remove', 'Frontend\PhrasesController@remove');
 Route::get('phrases/learn/engtoviet', 'Frontend\PhrasesController@engtoviet');
 Route::get('phrases/learn/viettoeng', 'Frontend\PhrasesController@viettoeng');
 
+// Word Route
+Route::get('word', 'Frontend\WordController@index');
+Route::post('word/add', 'Frontend\WordController@add');
+Route::get('word/storgage', 'Frontend\WordController@storgage');
+Route::post('word/remove', 'Frontend\WordController@remove');
+Route::get('word/learn/engtoviet', 'Frontend\WordController@engtoviet');
+Route::get('word/learn/viettoeng', 'Frontend\WordController@viettoeng');
+
 // Profile
 Route::get('profile', 'Frontend\FrontendController@profile');
 Route::post('profile/update', 'Frontend\FrontendController@update_profile');

@@ -14,6 +14,32 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#button-check-result-word").click(function() {
+		var check = false;
+		var count_all = 0;
+		var count_true = 0;
+		$("#button-show-result").removeClass("hidden");
+		$(".quest-item").each(function() {
+			count_all++;
+			$(this).find('input[type="radio"]').each(function() {
+				var result = $(this).parents(".quest-item").find(".input-result").val();
+				if( $(this).is(':checked') && $(this).val() == result ) {
+					check = true;
+				}
+				
+			});
+			if(check) {
+				$(this).parents(".form-group").find(".hide-check-true").removeClass('hidden');
+				count_true++;
+				check = false;
+			}
+			else {
+				$(this).parents(".form-group").find(".hide-check-false").removeClass('hidden');
+			}
+		});
+		$("#show-result-total").html(count_true+' / '+count_all);
+	});
+
 	$("#button-show-result").click(function() {
 		$(".hide-result").removeClass("hidden");
 	});
