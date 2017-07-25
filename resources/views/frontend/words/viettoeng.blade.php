@@ -27,7 +27,8 @@
                     <div class="form-group">
                         <label class="col-sm-12">{{ $word->vietnamese }}</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control input-content">
+                            @php $leng = strlen($word->english); $a = str_repeat('a',$leng); @endphp
+                            <input type="text" class="form-control input-content"  data-mask="{{ $a }}">
                             <input type="hidden" class="input-result" value="{{ $word->english }}">
                         </div>
                         <div class="col-sm-2">
@@ -63,6 +64,6 @@
 @section('learn-words', 'active')
 
 @section('add-script')
-
+    <script src="{{URL::asset('public/assets/js/jasny-bootstrap.min.js')}}"></script>
     
 @endsection
