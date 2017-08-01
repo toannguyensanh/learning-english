@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	$("#button-check-result").click(function() {
+		$(".hide-check-true, .hide-check-false").each(function() {
+			if(!$(this).hasClass("hidden")) $(this).addClass("hidden");
+		});
 		var count_all = 0;
 		var count_true = 0;
 		$("#button-show-result").removeClass("hidden");

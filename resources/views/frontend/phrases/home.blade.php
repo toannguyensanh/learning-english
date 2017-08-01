@@ -87,7 +87,10 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-4">
-                        <button class="btn btn-primary dim" type="submit">Add To Storgage</button>
+                        <button class="btn btn-primary dim" type="submit"><i class="fa fa-floppy-o"></i> Add To Storgage</button>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-4 text-right">
+                        <a href="/phrases/storgage"><button class="btn btn-success dim" type="button">Go To Storgage <i class="fa fa-arrow-right"></i></button></a>
                     </div>
                 </div>
             </form>

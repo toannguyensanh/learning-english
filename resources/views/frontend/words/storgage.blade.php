@@ -68,7 +68,10 @@
                     </table>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <button class="btn btn-primary dim" type="submit">Remove Word</button>
+                            <button class="btn btn-primary dim" type="submit"><i class="fa fa-floppy-o"></i> Remove Word</button>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 text-right">
+                            <a href="/word/learn/engtoviet"><button class="btn btn-success dim" type="button">Learn Phrase <i class="fa fa-arrow-right"></i></button></a>
                         </div>
                     </div>
                 </form>
