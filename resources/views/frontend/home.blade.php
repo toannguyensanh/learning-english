@@ -2,6 +2,17 @@
 
 @section('title','HomePage')
 
+@section('add-style')
+    
+    <link href="{{URL::asset('public/assets/css/datatables.min.css')}}" rel="stylesheet">
+
+    <style>
+        audio {
+            width: 140px;
+        }
+    </style>
+@endsection
+
 @section('body_class', 'homepage')
 
 @section('content')
@@ -12,7 +23,7 @@
             <h1 class="text-center">1000 Most Common English Phrases</h1>
         </div>
         <div class="ibox-content">
-            <table class="table">
+            <table class="table table-striped table-bordered table-hover"  id="editable">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -38,7 +49,6 @@
                     @endforeach
                 </tbody>
             </table>
-            <div>{{ $phrases->links() }}</div>
 
             <div>
                 <a href="/phrases" class="btn btn-success btn-lg">Learn Phrase</a>
@@ -53,7 +63,7 @@
             <h1 class="text-center">1000 Most Common English Words</h1>
         </div>
         <div class="ibox-content">
-            <table class="table">
+            <table class="table table-striped table-bordered table-hover"  id="editable2">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -79,7 +89,6 @@
                     @endforeach
                 </tbody>
             </table>
-            <div>{{ $phrases->links() }}</div>
 
             <div>
                 <a href="/word" class="btn btn-success btn-lg">Learn Word</a>
@@ -88,4 +97,16 @@
     </div>
 </div>
 
+@endsection
+
+@section('add-script')
+    <!-- Datatables -->
+    <script src="{{URL::asset('public/assets/js/datatables.min.js')}}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#editable').DataTable();
+            $('#editable2').DataTable();
+        });
+    </script>
 @endsection
