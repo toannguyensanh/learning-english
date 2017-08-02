@@ -31,6 +31,21 @@ $(document).ready(function() {
             wrapper.append("<audio controls class='m-t'><source src='/public"+$(this).val()+"' type='audio/mpeg'></audio>");
         }
     });
+
+    $("#add_input_to_groups_english").click(function() {
+        var input = '<div class="input-group m-b"><input type="text" name="english[]" class="form-control m-b" value="" required><span class="input-group-btn"><button type="button" class="btn btn-danger delete_input_lesson"><i class="fa fa-times"></i></button></span></div>';
+        $(this).parents('.form-group').find(".lesson_english").append(input);
+    });
+
+    $("#add_input_to_groups_vietnamese").click(function() {
+        var input = '<div class="input-group m-b"><input type="text" name="vietnamese[]" class="form-control m-b" value="" required><span class="input-group-btn"><button type="button" class="btn btn-danger delete_input_lesson"><i class="fa fa-times"></i></button></span></div>';
+        $(this).parents('.form-group').find(".lesson_vietnamese").append(input);
+    });
+
+    $("body").on('click', '.delete_input_lesson', function() {
+        $(this).parents(".input-group").addClass("remove-input-group");
+        $(".remove-input-group").remove();
+    });
 });
 
 /*

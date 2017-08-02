@@ -69,6 +69,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
 	Route::post('/word/update','Admin\WordController@update');
 	Route::get('/word/delete/{id}','Admin\WordController@delete');
 
+	//Lesson Route
+	Route::get('lesson','Admin\LessonController@index');
+	Route::get('/lesson/create','Admin\LessonController@create');
+	Route::get('/lesson/edit/{id}','Admin\LessonController@edit');
+	Route::post('/lesson/update','Admin\LessonController@update');
+	Route::get('/lesson/delete/{id}','Admin\LessonController@delete');
+
 });
 
 /*
@@ -86,12 +93,15 @@ Menu::make('admin_menu', function($menu){
 	$menu->userManage->add('Permissions', 'admin/permission')->attr(array('it-icon' => 'user-plus'))->active('admin/permission/*');
 
 	//Phrase
-	$menu->add('Manage Phrases', '#')->attr(array('it-icon' => 'pencil-square-o'));
+	$menu->add('Manage Phrases', '#')->attr(array('it-icon' => 'book'));
 	$menu->managePhrases->add('All Phrases', 'admin/phrases')->attr(array('it-icon' => 'globe'))->active('admin/phrases/*');
 	$menu->managePhrases->add('Categories Phrases', 'admin/cat-phrases')->attr(array('it-icon' => 'list-alt'))->active('admin/cat-phrases/*');
 
 	//Word
-	$menu->add('Manage Word', 'admin/word')->attr(array('it-icon' => 'file-word-o'))->active('admin/word/*');
+	$menu->add('Manage Word', 'admin/word')->attr(array('it-icon' => 'microphone'))->active('admin/word/*');
+
+	//Lesson
+	$menu->add('Manage Lesson', 'admin/lesson')->attr(array('it-icon' => 'headphones'))->active('admin/lesson/*');
   
 });
 
