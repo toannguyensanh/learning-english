@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Phrases;
 use App\Models\Word;
+use App\Models\Lesson;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +16,10 @@ class FrontendController extends Controller
     
     public function index()
     {
+        $lessons = Lesson::orderBy('id', 'asc')->get();
         $phrases = Phrases::orderBy('english', 'asc')->get();
         $words = Word::orderBy('english', 'asc')->get();
-        return view('frontend.home', compact('phrases', 'words'));
+        return view('frontend.home', compact('phrases', 'words', 'lessons'));
     }
 
     public function profile()

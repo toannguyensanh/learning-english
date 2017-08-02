@@ -17,7 +17,35 @@
 
 @section('content')
 
-<div class="col-md-12">
+<div class="col-sm-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h1 class="text-center">100 English Lessons</h1>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                @foreach ($lessons as $lesson)
+                    <div class="col-sm-12">
+                        <div class="lesson-block m-b gray-bg">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a href=""><img src="/public/{{ $lesson->featured_image }}"></a>
+                                </div>
+                                <div class="col-sm-8 lesson-block-content">
+                                    <div class="lesson-number">Lesson: {{ $lesson->id }}</div>
+                                    <div class="lesson-title"><a href="">{{ $lesson->title }}</a></div>
+                                    <div class="lesson-level">Level: {{ $lesson->level }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>    
+</div>
+
+<!-- <div class="col-md-12">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h1 class="text-center">1000 Most Common English Phrases</h1>
@@ -95,7 +123,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 @endsection
 

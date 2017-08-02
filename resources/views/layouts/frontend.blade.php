@@ -30,6 +30,7 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
+                            <li><a aria-expanded="false" href="/lesson">100 English Lessons</a></li>
                             <li><a aria-expanded="false" href="/phrases">1000 Most Common English Phrases</a></li>
                             <li><a aria-expanded="false" href="/word">1000 Most Common English Words</a></li>
 
@@ -131,6 +132,11 @@
                                                 <li class="@yield('words-viettoeng')"><a href="/word/learn/viettoeng"><i class="fa fa-hand-o-right"></i> Vietnamese to English</a></li>
                                             </ul>
                                         </li>
+                                    </ul>
+                                    <div class="hr-line-dashed"></div>
+                                    <h3>Lesson</h3>
+                                    <ul class="folder-list sidebar-list" style="padding: 0">
+                                        <li class="@yield('all-lessons')"><a href="/lesson"><i class="fa fa-hand-o-right"></i> All Lessons</a></li>
                                     </ul>
                                 </div>
                             </div>
