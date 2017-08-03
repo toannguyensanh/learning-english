@@ -128,9 +128,8 @@ Route::get('word/learn/viettoeng', 'Frontend\WordController@viettoeng');
 
 // Lesson Route
 Route::get('lesson', 'Frontend\LessonController@index');
-Route::get('lesson/{id}', 'Frontend\LessonController@learn');
+Route::get('lesson/{alias}', 'Frontend\LessonController@learn');
 
 // Profile
 Route::get('profile', 'Frontend\FrontendController@profile');
 Route::post('profile/update', 'Frontend\FrontendController@update_profile');
-

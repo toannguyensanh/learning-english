@@ -18,11 +18,11 @@
                         <div class="lesson-block m-b gray-bg">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <a href=""><img src="/public/{{ $lesson->featured_image }}"></a>
+                                    <a href="/lesson/{{ $lesson->alias }}"><img src="/public/{{ $lesson->featured_image }}"></a>
                                 </div>
                                 <div class="col-sm-8 lesson-block-content">
-                                    <div class="lesson-number">Lesson: {{ $lesson->id }}</div>
-                                    <div class="lesson-title"><a href="">{{ $lesson->title }}</a></div>
+                                    <div class="lesson-number">Lesson: {{ $lesson->order }}</div>
+                                    <div class="lesson-title"><a href="/lesson/{{ $lesson->alias }}">{{ $lesson->title }}</a></div>
                                     <div class="lesson-level">Level: {{ $lesson->level }}</div>
                                 </div>
                             </div>

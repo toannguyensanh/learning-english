@@ -48,5 +48,6 @@ $(document).ready(function() {
 
 	$("#button-show-result").click(function() {
 		$(".hide-result").removeClass("hidden");
+		$(".open-tab-click").attr("data-toggle","tab").css('cursor', 'pointer');
 	});
 });

@@ -19,7 +19,13 @@ class LessonController extends Controller
     	return view('frontend.lessons.home', compact('lessons'));
     }
 
-    public function learn($id) {
-    	return view('frontend.lessons.learn', compact('id'));
+    public function learn($alias) {
+        $lesson = Lesson::where('alias', $alias)->first();
+    	return view('frontend.lessons.learn', compact('lesson'));
+    }
+
+    public static function clean_value($value) {
+        $value = str_replace("’", "'", $value);
+        return $value;
     }
 }
