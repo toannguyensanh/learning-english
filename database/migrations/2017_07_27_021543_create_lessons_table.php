@@ -21,8 +21,8 @@ class CreateLessonsTable extends Migration
             $table->string('audio')->nullable();
             $table->string('character1');
             $table->string('character2');
-            $table->string('english', 1000);
-            $table->string('vietnamese', 1000);
+            $table->string('english', 5000);
+            $table->string('vietnamese', 5000);
             $table->string('level');
             $table->string('order');
             $table->timestamps();
