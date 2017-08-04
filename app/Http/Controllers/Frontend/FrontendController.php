@@ -16,7 +16,7 @@ class FrontendController extends Controller
     
     public function index()
     {
-        $lessons = Lesson::orderBy('id', 'asc')->get();
+        $lessons = Lesson::orderBy('id', 'asc')->take(5)->get();
         $phrases = Phrases::orderBy('english', 'asc')->get();
         $words = Word::orderBy('english', 'asc')->get();
         return view('frontend.home', compact('phrases', 'words', 'lessons'));
