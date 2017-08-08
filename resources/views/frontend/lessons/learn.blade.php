@@ -27,6 +27,21 @@
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
+                            @if ($lesson->alias == 'introducing-a-friend')
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Michael</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control input-content">
+                                        <input type="hidden" class="input-result" value="Robert, this is my friend, Mrs. Smith">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <strong class="hidden hide-check-true">TRUE</strong>
+                                        <strong class="hidden hide-check-false">FALSE</strong>
+                                    </div>
+                                    <label class="col-sm-10 col-sm-offset-2 hide-result hidden">Result: <span>Robert, this is my friend, Mrs. Smith</span></label>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                            @endif
                             @php $i = 1; @endphp
                             @foreach (json_decode($lesson->english) as $val)
                                 @php $val = App\Http\Controllers\Frontend\LessonController::clean_value($val); @endphp
@@ -56,17 +71,27 @@
                     </div>
                     <div id="tab-2" class="tab-pane">
                         <div class="panel-body">
+                            @if ($lesson->alias == 'introducing-a-friend')
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Michael</label>
+                                    <div class="col-sm-10">
+                                        <p class="lesson-english-content" style="color: #000">Robert, this is my friend, Mrs. Smith</p>
+                                        <div class="lesson-vietnamese-content" style="color: blue">Robert, đây là bạn tôi, bà Smith</div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                            @endif
                             @php $j = 1; $arr_viet = json_decode($lesson->vietnamese); @endphp
                             @foreach (json_decode($lesson->english) as $key => $val)
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">{{ $i%2 == 0 ? $lesson->character2 : $lesson->character1 }}</label>
+                                    <label class="col-sm-2 control-label">{{ $j%2 == 0 ? $lesson->character2 : $lesson->character1 }}</label>
                                     <div class="col-sm-10">
                                         <p class="lesson-english-content" style="color: #000">{{ $val }}</p>
                                         <div class="lesson-vietnamese-content" style="color: blue">{{ $arr_viet[$key] }}</div>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
-                                @php $i++; @endphp
+                                @php $j++; @endphp
                             @endforeach
                         </div>
                     </div>
