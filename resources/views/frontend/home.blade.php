@@ -61,7 +61,6 @@
                         <th>#</th>
                         <th>English</th>
                         <th>Vietnamese</th>
-                        <th>Audio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,11 +70,6 @@
                             <td>{{ $i }}</td>
                             <td>{{ $phrase->english }}</td>
                             <td>{{ $phrase->vietnamese }}</td>
-                            <td>
-                                <audio controls controlsList="nodownload">
-                                    <source src="/public/{{ $phrase->audio_normal }}" type="audio/mpeg">
-                                </audio>
-                            </td>
                         </tr>
                         @php $i++; @endphp
                     @endforeach
@@ -101,7 +95,6 @@
                         <th>#</th>
                         <th>English</th>
                         <th>Vietnamese</th>
-                        <th>Audio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -111,11 +104,6 @@
                             <td>{{ $j }}</td>
                             <td>{{ $word->english }}</td>
                             <td>{{ $word->vietnamese }}</td>
-                            <td>
-                                <audio controls controlsList="nodownload">
-                                    <source src="/public/{{ $word->audio }}" type="audio/mpeg">
-                                </audio>
-                            </td>
                         </tr>
                         @php $j++; @endphp
                     @endforeach
