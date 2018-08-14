@@ -50,4 +50,8 @@ class FrontendController extends Controller
 
         return redirect('/profile');
     }
+
+    public function guide() {
+        return view('frontend.guide');
+    }
 }

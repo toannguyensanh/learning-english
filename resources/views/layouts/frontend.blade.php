@@ -33,7 +33,7 @@
                             <li><a aria-expanded="false" href="/lesson">100 English Lessons</a></li>
                             <li><a aria-expanded="false" href="/phrases">1000 Most Common English Phrases</a></li>
                             <li><a aria-expanded="false" href="/word">1000 Most Common English Words</a></li>
-
+                            <li><a aria-expanded="false" href="/guide">Guide</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             @if (Route::has('login'))

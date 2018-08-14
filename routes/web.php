@@ -133,3 +133,6 @@ Route::get('lesson/{alias}', 'Frontend\LessonController@learn');
 // Profile
 Route::get('profile', 'Frontend\FrontendController@profile');
 Route::post('profile/update', 'Frontend\FrontendController@update_profile');
+
+//Guide
+Route::get('guide', 'Frontend\FrontendController@guide');
